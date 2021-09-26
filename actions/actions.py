@@ -1,5 +1,5 @@
 from typing import Any, Text, Dict, List
-
+import json
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -9,8 +9,8 @@ class ValidateRestaurantForm(Action):
 
     def run(
         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
-    ) -> List[EventType]:
-        required_slots = ["division"]
+    ) -> List[Dict[Text, Any]]:
+        required_slots = ["division"]["opslots"]
 
         for slot_name in required_slots:
             if tracker.slots.get(slot_name) is None:
@@ -24,11 +24,65 @@ class ActionSubmit(Action):
     def name(self) -> Text:
         return "action_submit"
 
-    def run(
-        self,
-        dispatcher,
-        tracker: Tracker,
-        domain: "DomainDict",
-    ) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(template="utter_details_thanks",
-                                 Name=tracker.get_slot("division"))
+    def doctors(self, tracker):
+        if("cardiac"==tracker.get_slot("division")):
+            f = open('../data.json',)
+            data = json.load(f)
+            for i in data["cardiac"]:
+                a = data["cardiac"].keys()
+            f.close() 
+            return a      
+        if("general"==tracker.get_slot("division")):
+            f = open('../data.json',)
+            data = json.load(f)
+            for i in data["general"]:
+                a = data["general"].keys()
+            f.close() 
+            return a 
+        if("ortho"==tracker.get_slot("division")):
+            f = open('../data.json',)
+            data = json.load(f)
+            for i in data["ortho"]:
+                a = data["ortho"].keys()
+            f.close() 
+            return a 
+        return "None"
+
+    def slots(self, tracker):
+        if("cardiac"==tracker.get_slot("division")):
+            f = open('../data.json',)
+            data = json.load(f)
+            for i in data["cardiac"]:
+                b = data["cardiac"]
+            f.close() 
+            return b    
+        if("general"==tracker.get_slot("division")):
+            f = open('../data.json',)
+            data = json.load(f)
+            for i in data["general"]:
+                b = data["general"]
+            f.close() 
+            return b 
+        if("ortho"==tracker.get_slot("division")):
+            f = open('../data.json',)
+            data = json.load(f)
+            for i in data["ortho"]:
+                b = data["ortho"]
+            f.close() 
+            return '\n'.join("{}: {}".format(k, v) for k, v in b.items())
+        return "None"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        if("no"==tracker.get_slot("opslots")):
+            a = self.doctors(tracker)
+            dispatcher.utter_message(template="utter_doctors",
+                                    Names = a,
+                                    division = tracker.get_slot("division"))
+        else:
+            b = self.slots(tracker)
+            dispatcher.utter_message(template="utter_details",
+                                    slots = b,
+                                    division = tracker.get_slot("division"))

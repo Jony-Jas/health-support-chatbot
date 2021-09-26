@@ -5,7 +5,6 @@ rules:
 - rule: Activate form
   steps:
   - intent: specific_enquiry
-  - action: utter_name
   - action: user_details_form
   - active_loop: user_details_form
 
@@ -21,6 +20,7 @@ rules:
     - requested_slot: null
   # The actions we want to run when the form is submitted.
   - action: action_submit
+  - action: utter_again
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
@@ -30,4 +30,5 @@ rules:
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
-  - action: utter_iamabot
+  - action: utter_name
+  - action: utter_help

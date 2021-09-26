@@ -50,39 +50,14 @@ nlu:
       - no way
       - not really
 
-  - intent: mood_great
+  - intent: okay
     examples: |
-      - perfect
-      - great
-      - amazing
-      - feeling like a king
-      - wonderful
-      - I am feeling very good
-      - I am great
-      - I am amazing
-      - I am going to save the world
-      - super stoked
-      - extremely good
-      - so so perfect
-      - so good
-      - so perfect
-
-  - intent: mood_unhappy
-    examples: |
-      - my day was horrible
-      - I am sad
-      - I don't feel very well
-      - I am disappointed
-      - super sad
-      - I'm so sad
-      - sad
-      - very sad
-      - unhappy
-      - not good
-      - not very good
-      - extremly sad
-      - so saad
-      - so sad
+      - ok 
+      - okay
+      - well
+      - thank you
+      - thanks
+      - it helps
 
   - intent: bot_challenge
     examples: |
@@ -90,19 +65,26 @@ nlu:
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
-
-  - intent: general_enquiry
-    examples: |
-      - what doctors can i meet ?
-
-  - intent: specific_enquiry
-    examples: |
-      - what [General Medicine]{"entity":"division","value":"general"} doctors available
-      - what [HEART]{"entity":"division","value":"heart"} doctors available
-
-  - intent: tell_name
-    examples: |
       - whats your name 
       - what's your name 
       - what is your name
       - tell your name please
+
+  - intent: general_enquiry
+    examples: |
+      - what doctors can i meet
+      - what division are available
+      - what facilities are available
+
+  - intent: specific_enquiry
+    examples: |
+      - what [General Medicine]{"entity":"division","value":"general"} doctors available
+      - what [HEART]{"entity":"division","value":"cardiac"} doctors available
+      - what [cardiac]{"entity":"division","value":"cardiac"} doctors available
+      - what [ortho]{"entity":"division","value":"ortho"} doctors available
+      - what [bone]{"entity":"division","value":"ortho"} doctors available
+
+  - intent: slot_enquiry
+    examples: |
+      - [yes]{"entity":"opslots","value":"yes"}
+      - [no]{"entity":"opslots","value":"no"}

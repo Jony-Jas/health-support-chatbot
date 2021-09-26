@@ -1,63 +1,93 @@
 version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - tell_name
-  - general_enquiry
-  - specific_enquiry:
-    use_entities:
-      - division
-
-entities:
-  - division
-
-slots:
-  division:
-    type: text
-
-responses:
-  utter_greet:
-    - text: "Hey! How are you?"
-
-  utter_cheer_up:
-    - text: "Here is something to cheer you up:"
-      image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-    - text: "Did that help you?"
-
-  utter_happy:
-    - text: "Great, carry on!"
-
-  utter_goodbye:
-    - text: "Bye"
-
-  utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
-
-  utter_name:
-    - text: "I am health support bot"
-
-  utter_ask_division:
-    - text: "what help you want"
-
-  utter_details_thanks:
-    - text: "Thanks for providing the given details \nName: {Name}"
-
-actions:
-  - action_submit
-forms:
-  user_details_form:
-    division:
-      - type: from_entity
-        entity: division
-
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+  - greet:
+      use_entities: true
+  - goodbye:
+      use_entities: true
+  - affirm:
+      use_entities: true
+  - deny:
+      use_entities: true
+  - okay:
+      use_entities: true
+  - bot_challenge:
+      use_entities: true
+  - general_enquiry:
+      use_entities: true
+  - specific_enquiry:
+      use_entities: true
+  - slot_enquiry:
+      use_entities: true
+  - ask_again:
+      use_entities: true
+entities:
+  - division
+  - opslots
+slots:
+  division:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  opslots:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+    - text: Hello, I am ABC hospital chatbot./nYou can check the consultants and the slots OP available.
+  utter_again:
+    - text: To ask again, send '/restart'
+  utter_help:
+    - text: Do you want any help?
+  utter_divisions:
+    - text: General Medicine,
+        Ortho,
+        Cardiac,
+  utter_carry_on:
+    - text: Great, carry on!
+  utter_goodbye:
+    - text: Take care, Bye 👋
+  utter_name:
+    - text: I am health support bot
+  utter_ask_division:
+    - text: what doctor you want to meet?
+  utter_division:
+    - text: what doctor you want to meet?
+  utter_ask_opslots:
+    - text: Do you want see the available slots?
+  utter_more_support:
+    - text: For more help contact 12345678
+  utter_doctors:
+    - text: |-
+        Doctors available for {division} are: {Names}
+  utter_details:
+    - text: |-
+        OP status on 29-02-2021::2.05PM
+        Doctors in: {division}
+        OP available: {slots}
+
+actions:
+  - action_submit
+
+forms:
+  user_details_form:
+    required_slots:
+      division:
+        - entity: division
+          type: from_entity
+      opslots:
+        - entity: opslots
+          type: from_entity
+e2e_actions: []
