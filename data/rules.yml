@@ -20,7 +20,7 @@ rules:
     - requested_slot: null
   # The actions we want to run when the form is submitted.
   - action: action_submit
-  - action: utter_again
+  - action: action_restart
 
 - rule: Say goodbye anytime the user says goodbye
   steps:

@@ -78,7 +78,7 @@ nlu:
 
   - intent: specific_enquiry
     examples: |
-      - what [General Medicine]{"entity":"division","value":"general"} doctors available
+      - what [General]{"entity":"division","value":"general"} doctors available
       - what [HEART]{"entity":"division","value":"cardiac"} doctors available
       - what [cardiac]{"entity":"division","value":"cardiac"} doctors available
       - what [ortho]{"entity":"division","value":"ortho"} doctors available

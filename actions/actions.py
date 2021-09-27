@@ -25,6 +25,12 @@ class ActionSubmit(Action):
         return "action_submit"
 
     def doctors(self, tracker):
+        def convertTuple(tup):
+                # initialize an empty string
+            str = '\n \n'
+            for item in tup:
+                str = str +'- '+ item + ' \n \n '
+            return str
         if("cardiac"==tracker.get_slot("division")):
             f = open('../data.json',)
             data = json.load(f)
@@ -43,12 +49,18 @@ class ActionSubmit(Action):
             f = open('../data.json',)
             data = json.load(f)
             for i in data["ortho"]:
-                a = data["ortho"].keys()
+                a = list(data["general"].keys())
+            b = convertTuple(a)
             f.close() 
-            return a 
+            return b
         return "None"
 
     def slots(self, tracker):
+        def convertTuple(tup):
+            str = ''
+            for item in tup:
+                str = str + item
+            return str
         if("cardiac"==tracker.get_slot("division")):
             f = open('../data.json',)
             data = json.load(f)
@@ -69,7 +81,14 @@ class ActionSubmit(Action):
             for i in data["ortho"]:
                 b = data["ortho"]
             f.close() 
-            return '\n'.join("{}: {}".format(k, v) for k, v in b.items())
+            ans = ""
+            for x in b:
+                ans+= '\n\n'+'- '+'Doctor: '+(x)
+                for y in b[x]:
+                    c = (y,':',b[x][y])
+                    str = convertTuple(c)
+                    ans+= ' \n \n '+str
+            return ans
         return "None"
 
     def run(self, dispatcher: CollectingDispatcher,

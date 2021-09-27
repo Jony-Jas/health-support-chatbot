@@ -46,15 +46,13 @@ slots:
     influence_conversation: false
 responses:
   utter_greet:
-    - text: Hello, I am ABC hospital chatbot./nYou can check the consultants and the slots OP available.
+    - text: "Hello, I am Hospital support chatbot. \n \n You can check the consultants and the slots OP available."
   utter_again:
     - text: To ask again, send '/restart'
   utter_help:
     - text: Do you want any help?
   utter_divisions:
-    - text: General Medicine,
-        Ortho,
-        Cardiac,
+    - text: "➼General Medicine \n \n ➼Ortho \n \n ➼Cardiac"
   utter_carry_on:
     - text: Great, carry on!
   utter_goodbye:
@@ -75,8 +73,9 @@ responses:
   utter_details:
     - text: |-
         OP status on 29-02-2021::2.05PM
-        Doctors in: {division}
-        OP available: {slots}
+        --
+        Showing results for : {division} doctors
+        {slots}
 
 actions:
   - action_submit
