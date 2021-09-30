@@ -10,11 +10,11 @@ intents:
   - goodbye:
       use_entities: true
   - affirm:
-      use_entities: true
+      use_entities: false
   - deny:
-      use_entities: true
+      use_entities: false
   - okay:
-      use_entities: true
+      use_entities: false
   - bot_challenge:
       use_entities: true
   - general_enquiry:
@@ -23,7 +23,7 @@ intents:
       use_entities: true
   - slot_enquiry:
       use_entities: true
-  - ask_again:
+  - more_help:
       use_entities: true
 entities:
   - division
@@ -50,7 +50,7 @@ responses:
   utter_again:
     - text: To ask again, send '/restart'
   utter_help:
-    - text: Do you want any help?
+    - text: Do you want any more help?
   utter_divisions:
     - text: "➼General Medicine \n \n ➼Ortho \n \n ➼Cardiac"
   utter_carry_on:
@@ -66,7 +66,7 @@ responses:
   utter_ask_opslots:
     - text: Do you want see the available slots?
   utter_more_support:
-    - text: For more help contact 12345678
+    - text: "For more help contact 04321277345 \n \nFor Emergency call 108"
   utter_doctors:
     - text: |-
         Doctors available for {division} are: {Names}

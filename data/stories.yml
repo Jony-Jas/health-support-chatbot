@@ -15,13 +15,12 @@ stories:
   - action: utter_more_support
   - action: utter_goodbye
 
-- story: affirm path
-  steps:
-  - intent: affirm
-  - action: utter_carry_on
-
 - story: okay path
   steps:
   - intent: okay
   - action: utter_help
 
+- story: more help
+  steps: 
+  - intent: more_help
+  - action: utter_more_support

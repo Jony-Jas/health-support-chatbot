@@ -73,18 +73,30 @@ nlu:
   - intent: general_enquiry
     examples: |
       - what doctors can i meet
-      - what division are available
+      - what doctors are available
+      - what divisions are available
+      - what departments are available
       - what facilities are available
 
   - intent: specific_enquiry
     examples: |
       - what [General]{"entity":"division","value":"general"} doctors available
+      - I want to see [general]{"entity":"division","value":"general"} medicine
       - what [HEART]{"entity":"division","value":"cardiac"} doctors available
       - what [cardiac]{"entity":"division","value":"cardiac"} doctors available
+      - I want to see [cardiologist]{"entity":"division","value":"cardiac"}
       - what [ortho]{"entity":"division","value":"ortho"} doctors available
+      - I want to see [orthologist]{"entity":"division","value":"ortho"}
       - what [bone]{"entity":"division","value":"ortho"} doctors available
 
   - intent: slot_enquiry
     examples: |
       - [yes]{"entity":"opslots","value":"yes"}
       - [no]{"entity":"opslots","value":"no"}
+      - I want to see the [slots]{"entity":"opslots","value":"yes"}
+
+  - intent: more_help
+    examples: |
+      - I want more help 
+      - Contact number
+      - emergency
