@@ -1,26 +1,90 @@
 version: "2.0"
 
 stories:
+  - story: general path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: general_enquiry
+      - action: utter_divisions
 
-- story: general path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: general_enquiry
-  - action: utter_divisions
+  - story: deny path
+    steps:
+      - intent: deny
+      - action: utter_more_support
+      - action: utter_goodbye
 
-- story: deny path
-  steps:
-  - intent: deny
-  - action: utter_more_support
-  - action: utter_goodbye
+  - story: okay path
+    steps:
+      - intent: okay
+      - action: utter_help
 
-- story: okay path
-  steps:
-  - intent: okay
-  - action: utter_help
+  - story: more help
+    steps:
+      - intent: more_help
+      - action: utter_more_support
 
-- story: more help
-  steps: 
-  - intent: more_help
-  - action: utter_more_support
+  - story: covid path
+    steps:
+      - intent: covid
+      - action: utter_covid
+
+  - story: diabetes path
+    steps:
+      - intent: diabetes
+      - action: utter_diabetes
+
+  - story: cough path
+    steps:
+      - intent: cough
+      - action: utter_cough
+
+  - story: diarrhea path
+    steps:
+      - intent: diarrhea
+      - action: utter_diarrhea
+
+  - story: cold path
+    steps:
+      - intent: cold
+      - action: utter_cold
+
+  - story: pox path
+    steps:
+      - intent: chiken_pox
+      - action: utter_pox
+
+  - story: flu path
+    steps:
+      - intent: flu
+      - action: utter_flu
+
+  - story: malaria path
+    steps:
+      - intent: malaria
+      - action: utter_malaria
+
+  - story: pneumonia path
+    steps:
+      - intent: pneumonia
+      - action: utter_pneumonia
+
+  - story: cholera path
+    steps:
+      - intent: cholera
+      - action: utter_cholera
+            
+  - story: dengue
+    steps:
+      - intent: dengue
+      - action: utter_dengue
+
+  - story: typhoid
+    steps:
+      - intent: typhoid
+      - action: utter_typhoid
+
+  - story: hospitals path
+    steps:
+      - intent: hospitals
+      - action: utter_hospitals

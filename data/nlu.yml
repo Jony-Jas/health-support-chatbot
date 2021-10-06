@@ -100,3 +100,94 @@ nlu:
       - I want more help 
       - Contact number
       - emergency
+
+  - intent: covid
+    examples: |
+      - what are the covid symptoms
+      - treatment for covid
+      - what are the corona symptoms
+      - symptoms of corona virus 
+      - information about covid
+
+  - intent: diabetes
+    examples: |
+      - what are the diabetes symptoms
+      - treatment for diabetes
+      - symptoms of diabetes
+      - information about diabetes
+
+  - intent: cough
+    examples: |
+      - what are the cough symptoms
+      - treatment for cough
+      - symptoms of cough
+      - information about cough
+
+  - intent: diarrhea
+    examples: |
+      - what are the diarrhea symptoms
+      - treatment for diarrhea
+      - symptoms of diarrhea
+      - information about diarrhea
+
+  - intent: cold
+    examples: |
+      - what are the common cold symptoms
+      - treatment for common cold
+      - symptoms of common cold
+      - information about common cold
+
+  - intent: chiken_pox
+    examples: |
+      - what are the chicken pox symptoms
+      - treatment for chicken pox
+      - symptoms of chicken pox
+      - information about chicken pox
+
+  - intent: flu
+    examples: |
+      - what are the flu symptoms
+      - treatment for flu
+      - symptoms of flu
+      - information about flu
+
+  - intent: malaria
+    examples: |
+      - what are the malaria symptoms
+      - treatment for malaria
+      - symptoms of malaria
+      - information about malaria
+
+  - intent: pneumonia
+    examples: |
+      - what are the pneumonia symptoms
+      - treatment for pneumonia
+      - symptoms of pneumonia
+      - information about pneumonia
+
+  - intent: cholera
+    examples: |
+      - what are the cholera symptoms
+      - treatment for cholera
+      - symptoms of cholera
+      - information about cholera
+
+  - intent: dengue
+    examples: |
+      - what are the dengue symptoms
+      - treatment for dengue
+      - symptoms of dengue
+      - information about dengue
+
+  - intent: typhoid
+    examples: |
+      - what are the typhoid symptoms
+      - treatment for typhoid
+      - symptoms of typhoid
+      - information about typhoid
+
+  - intent: hospitals
+    examples: | 
+      - hospitals around me
+      - list nearby hospitals
+      - show hospitals

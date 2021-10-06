@@ -25,6 +25,20 @@ intents:
       use_entities: true
   - more_help:
       use_entities: true
+  - covid
+  - diabetes
+  - cough
+  - diarrhea
+  - cold
+  - chiken_pox
+  - flu
+  - malaria
+  - pneumonia
+  - cholera
+  - dengue
+  - typhoid
+  - hospitals
+
 entities:
   - division
   - opslots
@@ -46,7 +60,7 @@ slots:
     influence_conversation: false
 responses:
   utter_greet:
-    - text: "Hello, I am Hospital support chatbot. \n \n You can check the consultants and the slots OP available."
+    - text: "Hello, I am Health support chatbot. \n\n • You can check the nearby hoapitals, consultants and the OP slots available. \n \n Check the symptoms and preventive measures for common diseases "
   utter_again:
     - text: To ask again, send '/restart'
   utter_help:
@@ -76,6 +90,32 @@ responses:
         --
         Showing results for : {division} doctors
         {slots}
+  utter_covid:
+    - text: "Symptoms: \n \n fever \n \n cough \n \n tiredness \n \n loss of taste or smell \n\n Preventive Measures: \n \n Wash your hands frequently and carefully \n \n Avoid touching your face \n \n Don’t share personal items \n \n Clean and disinfect surfaces "
+  utter_diabetes:
+    - text: "Symptoms: \n \n Urinate (pee) a lot, often at night. \n \n Are very thirsty. \n \n  Lose weight without trying. \n \n Are very hungry. \n\n Preventive Measures:\n \n Lose extra weight \n \n Be more physically active \n \n Eat healthy plant foods \n \n Eat healthy fats \n \n Skip fad diets and make healthier choices "
+  utter_cough:
+    - text: "Symptoms: \n \n A runny or stuffy nose. \n \n A feeling of liquid running down the back of your throat (postnasal drip) \n \n Frequent throat clearing and sore throat. \n \n Hoarseness. \n \n Wheezing and shortness of breath. \n\n Preventive Measures: \n \n Practice good hand hygiene \n \n Cover your cough \n \n Avoid touching your eyes, nose, or mouth \n \n Practice social distancing \n \n Self-quarantine "
+  utter_diarrhea:
+    - text: "Symptoms: \n \n Frequent loose, watery stools. \n \n Abdominal cramps. \n \n Abdominal pain. \n \n Fever. \n \n Bleeding. \n \n Lightheadedness or dizziness from dehydration.\n\n Preventive Measures: \n \n access to safe drinking-water \n \n use of improved sanitation \n \n hand washing with soap \n \n good personal and food hygiene "
+  utter_cold:
+    - text: "Symptoms: \n \n Runny or stuffy nose \n \n Sore throat \n \n Cough \n \n Congestion \n \n Slight body aches or a mild headache \n \n Sneezing \n\n Preventive Measures: \n \n Wash your hands \n \n Disinfect your stuff \n \n Cover your cough \n \n Stay away from people with colds \n \n Take care of yourself "
+  utter_pox:
+    - text: "Symptoms: \n \n Fever \n \n Loss of appetite \n \n Headache \n \n Tiredness \n \n general feeling of being unwell \n\n Preventive Measures: \n \n Chickenpox can be prevented through vaccination, which is recommended for: \n \n   all children \n \n   adolescents \n \n   adults who aren’t already immune to chickenpox "
+  utter_flu:
+    - text: "Symptoms: \n \n Fever or feeling feverish/having chills. \n \n Cough. \n \n Shortness of breath or difficulty breathing. \n \n Fatigue (tiredness) \n \n Sore throat. \n\n Preventive Measures: \n \n Avoid close contact \n \n Stay home when you are sick \n \n Cover your mouth and nose \n \n Avoid touching your eyes, nose or mouth "
+  utter_malaria:
+    - text: "Symptoms: \n \n a high temperature of 38C or above. \n \n feeling hot and shivery. \n \n headaches. \n \n vomiting. \n \n muscle pains. \n \n diarrhoea. \n \n generally feeling unwell. \n\n Preventive Measures: \n \n Wear full sleeve protective clothing. \n \n Spray insect repellants on your exposed skin \n \n Use a mosquito net over the bed \n \n Keep your home and surroundings clean without any junks or wastes. "
+  utter_pneumonia:
+    - text: "Symptoms: \n \n Cough, which may produce greenish, yellow or even bloody mucus. \n \n Fever. \n \n Shortness of breath. \n \n Rapid, shallow breathing. \n\n Loss of appetite. \n\n Preventive Measures: \n \n Get the pneumococcal vaccine. \n \n Practice good hygiene. \n \n Don’t smoke. \n \n Practice a healthy lifestyle. "
+  utter_cholera:
+    - text: "Symptoms: \n \n profuse watery diarrhea. \n \n vomiting. \n \n thirst. \n \n leg cramps. \n \n restlessness or irritability. \n\n Preventive Measures: \n \n Make sure to drink and use safe water \n \n Wash your hands often with soap and safe water \n \n Cook food well \n \n Clean up safely in the kitchen "
+  utter_dengue:
+    - text: "Symptoms: \n \n Nausea, vomiting \n \n Rash \n \n Aches and pains (eye pain, typically behind the eyes, muscle, joint, or bone pain) \n\n Preventive Measures: \n \n Mosquito repellents \n \n Mosquito traps and nets \n \n Avoid scents \n \n Door and window screens "
+  utter_typhoid:
+    - text: "Symptoms: \n \n Headache. \n \n Weakness and fatigue. \n \n Muscle aches. \n \n Sweating. \n \n Dry cough. \n \n Stomach pain. \n\n Preventive Measures: \n \n Receiving a typhoid fever vaccination. \n \n Avoiding food that is raw or undercooked. \n \n Drinking only bottled water or water that has been boiled. \n \n Thoroughly washing your hands each time before eating. "
+  utter_hospitals:
+    - text: "K.G. Hospital \n \nBethel Hospital Pvt. Ltd. \n \nKurinji Hospital\n \nRamvel Hospital\n \nSri Ramakrishna Hospital "
 
 actions:
   - action_submit
