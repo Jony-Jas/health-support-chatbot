@@ -60,7 +60,7 @@ slots:
     influence_conversation: false
 responses:
   utter_greet:
-    - text: "Hello, I am Health support chatbot. \n\n • You can check the nearby hoapitals, consultants and the OP slots available. \n \n Check the symptoms and preventive measures for common diseases "
+    - text: "Hello, I am Health support chatbot. \n\n • You can check the nearby hoapitals, consultants and the OP slots available. \n \n • Also, you can check the symptoms and preventive measures for common diseases "
   utter_again:
     - text: To ask again, send '/restart'
   utter_help:
