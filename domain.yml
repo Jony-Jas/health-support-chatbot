@@ -86,7 +86,7 @@ responses:
         Doctors available for {division} are: {Names}
   utter_details:
     - text: |-
-        OP status on 29-02-2021::2.05PM
+        Outpatient status:
         --
         Showing results for : {division} doctors
         {slots}
